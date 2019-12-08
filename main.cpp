@@ -21,7 +21,7 @@ int operate(int num1, int num2, string command) {
 	return res;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 	srand(time(NULL));
 
 	cout << "Введите комманду" << endl;
