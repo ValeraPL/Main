@@ -1,25 +1,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <string>
+#include "operate.h"
 
 using namespace std;
 
-int operate(int num1, int num2, string command) {
-	int res;
-
-	if(command == "Плюс") {
-		res = num1 + num2;
-	} else if(command == "Минус") {
-		res = num1 - num2;
-	} else if(command == "Умножить") {
-		res = num1 * num2;
-	} else if(command == "Делить") {
-		res = num1 / num2;
-	}
-
-	return res;
-}
+int operate(int num1, int num2, string command);
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
