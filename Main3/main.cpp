@@ -1,36 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include "functions.h"
 
 using namespace std;
-
-void write() {
-	cout << "ЗАПИСЬ: ";
-
-	ofstream writeFile("text.txt");
-
-	string str;
-	getline(cin, str);
-	writeFile << str;
-	
-	writeFile.close();
-}
-
-void read() {
-	cout << "ЧТЕНИЕ: " << endl;
-
-	string readString;
-	ifstream readFile("text.txt");
-
-	getline(readFile, readString);
-	cout << readString << endl;
-
-	readFile.close();
-}
-
-void clear() {
-	ifstream clearFile("text.txt", ios_base::out);
-	clearFile.close();
-}
 
 int main(int argc, char *argv[]) {
 	bool start = true;
@@ -52,6 +24,9 @@ int main(int argc, char *argv[]) {
 				break;
 			case 3:
 				clear();
+				break;
+			case 4:
+				remove("text.txt");
 				break;
 			case 5:
 				start = false;
