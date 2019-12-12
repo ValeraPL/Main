@@ -12,22 +12,38 @@ using std::ifstream;
 using std::getline;
 
 void write() {
-	cout << "ЗАПИСЬ: ";
+	cout << "ЗАПИСЬ: *имя файла + расширение* " ;
 
-	ofstream writeFile("text.txt");
+	string fileName;
+	cin >> fileName;
 
+	ofstream writeFile(fileName);
+
+	bool write = true;
 	string str;
-	getline(cin, str);
-	writeFile << str;
+
+	while(write == true) {
+		getline(cin, str);
+
+		if(str == "./exit") {
+			write = false;
+		} else {
+			writeFile << str + "\n";
+		}
+	}
 	
 	writeFile.close();
 }
 
 void read() {
-	cout << "ЧТЕНИЕ: ";
+	cout << "ЧТЕНИЕ: *имя файла + расширение* ";
 
-	ifstream readFile("text.txt");
+	string fileName;
+	cin >> fileName;
 
+	ifstream readFile(fileName);
+
+	cin.ignore();
 	string readString;
 	while(getline(readFile, readString)) {
 		cout << readString << endl;
@@ -39,4 +55,23 @@ void read() {
 void clear() {
 	ifstream clearFile("text.txt", ios_base::out | ios_base::trunc);
 	clearFile.close();
+}
+
+void erase() {
+	cout << "УДАЛИТЬ: *имя файла + расширение* ";
+
+	string input, name, roger;
+	cin >> input;
+	name = input;
+
+	cout << "ПОСЛЕ УДАЛЕНИЯ ФАЙЛА ВЫ НЕ СМОЖЕТЕ ЕГО ВОСТАНОВИТЬ. ВЫ УВЕРЕННЫ[Y/N]: ";
+
+	cin >> input;
+	roger = input;
+
+	if(roger == "Y" || roger == "y") {
+		remove(name.c_str());
+	} else {
+		cout << "ОТМЕНА" << endl;
+	}
 }
