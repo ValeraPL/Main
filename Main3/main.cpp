@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 				clear();
 				break;
 			case 4:
-				remove("text.txt");
+				erase();
 				break;
 			case 5:
 				start = false;
