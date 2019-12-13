@@ -5,5 +5,6 @@ void write();
 void read();
 void clear();
 void erase();
+void find();
 
 #endif

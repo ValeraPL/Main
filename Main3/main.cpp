@@ -31,6 +31,9 @@ int main(int argc, char *argv[]) {
 			case 5:
 				start = false;
 				break;
+			case 6:
+				find();
+				break;
 			default:
 				cout << "1:Запись\n2:Чтение\n3:Отчистить\n4:Удалить\n5:Выход" << endl;
 				break;
