@@ -7,7 +7,7 @@ using namespace std;
 
 int operate(int num1, int num2, string command);
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
 	srand(time(NULL));
 
 	cout << "Введите комманду" << endl;

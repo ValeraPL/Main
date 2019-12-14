@@ -6,7 +6,7 @@ void printName(string name) {
 	cout << name << endl;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
 	string name;
 	getline(cin, name);
 

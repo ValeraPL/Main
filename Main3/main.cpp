@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
 	bool start = true;
 	cout << "1:Запись\n2:Чтение\n3:Отчистить\n4:Удалить\n5:Выход" << endl;
 
