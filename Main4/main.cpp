@@ -12,11 +12,11 @@ int main(int argc, char *argv[]) {
 	while(start == true) {
 		Bike bike;
 
-		cout << "Введите размер колеса: ";
+		cout << "Enter wheels inch: ";
 		cin >> inch;
 		bike.setWheelsInch(inch);
 
-		cout << "Введите цвет: ";
+		cout << "Enter color: ";
 		cin >> color;
 		bike.setColor(color);
 
@@ -24,8 +24,10 @@ int main(int argc, char *argv[]) {
 		file << "color: " << bike.getColor() << " inch: " << bike.getWheelsInch() << "\n";
 		file.close();
 
-		cout << "Записано" << endl;
+		cout << "WRITE" << endl;
 	}
 
 	return 0;
 }
+
+// TODO Узнать тип введенных данных
