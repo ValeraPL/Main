@@ -1,33 +1,27 @@
 #include <iostream>
+#include <vector>
 #include <fstream>
-#include "bike.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	int inch;
-	string color;
+	string input;
+	int size;
+	cin >> size;
+	vector<string> arrayName(size);
 
-	bool start = true;
-	while(start == true) {
-		Bike bike;
-
-		cout << "Enter wheels inch: ";
-		cin >> inch;
-		bike.setWheelsInch(inch);
-
-		cout << "Enter color: ";
-		cin >> color;
-		bike.setColor(color);
-
-		ofstream file("bikes.txt", ios_base::out | ios_base::app);
-		file << "color: " << bike.getColor() << " inch: " << bike.getWheelsInch() << "\n";
-		file.close();
-
-		cout << "WRITE" << endl;
+	for(int i = 0; i < size; i++) {
+		cin >> input;
+		arrayName[i] = input;
 	}
+
+	ofstream file("text.txt");
+
+	for(int i = 0; i < size; i++) {
+		file << arrayName[i] << "\n";
+	}
+
+	file.close();
 
 	return 0;
 }
-
-// TODO Узнать тип введенных данных
